@@ -22,7 +22,7 @@ public class User {
 
     //it is parent w.r.t. country
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-    private Country country;
+    private Country originalCountry;
 
     //it is child w.r.t service provider entity
     @ManyToMany
@@ -88,12 +88,12 @@ public class User {
         this.connectionList = connectionList;
     }
 
-    public Country getCountry() {
-        return country;
+    public Country getOriginalCountry() {
+        return originalCountry;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setOriginalCountry(Country country) {
+        this.originalCountry = country;
     }
 
     public List<ServiceProvider> getServiceProviderList() {
